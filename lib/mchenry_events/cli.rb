@@ -41,13 +41,26 @@ class MchenryEvents::CLI
   
   def get_user_month
     chosen_month = gets.strip.to_i
-    binding.pry
-    # if valid_input(chosen_month.to_i, @months)
-    # end
+    show_months_for(chosen_month) if valid_input(chosen_month.to_i, @months)
   end
   
   def valid_input(input, data)
     input <= data.length && input > 0
-    
+  end
+  
+  def show_months_for(chosen_month)
+    month = @months[chosen_month-1]
+    puts "Here are events for #{month}"
+    binding.pry
   end
 end
+
+
+
+
+
+
+
+
+
+
