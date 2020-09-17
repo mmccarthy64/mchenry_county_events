@@ -2,6 +2,7 @@ require_relative "./mchenry_events/version"
 require_relative "./mchenry_events/cli"
 require_relative "./mchenry_events/month"
 require_relative "./mchenry_events/scraper"
+require_relative "./mchenry_events/city"
 
 require 'pry'
 require 'nokogiri'

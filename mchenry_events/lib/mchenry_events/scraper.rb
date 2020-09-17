@@ -1,8 +1,14 @@
 class MchenryEvents::Scraper
   
-  def scrape_months(site)
-    doc = Nokogiri::HTML(open("https://www.visitmchenrycounty.com/Events"))
-    binding.pry
+  def self.scrape_cities
+    doc = Nokogiri::HTML(open("https://www.visitmchenrycounty.com/Annual-Events"))
+    
+    cities = doc.css('select#city option')
+    
+    cities.each do |n|
+      name = n.text
+      MchenryEvents::City.new(name)
+    end
   end
-  
+    
 end

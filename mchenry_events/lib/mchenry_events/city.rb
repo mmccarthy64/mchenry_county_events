@@ -1,4 +1,4 @@
-class MchenryEvents::Month
+class MchenryEvents::City
   attr_accessor :name
   
   @@all = []
@@ -13,8 +13,7 @@ class MchenryEvents::Month
   end
   
   def self.all
-    MchenryEvents::Scraper.scrape_months if @@all.empty?
+    MchenryEvents::Scraper.scrape_cities if @@all.empty?
     @@all
   end
-  
 end
