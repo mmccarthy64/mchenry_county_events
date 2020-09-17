@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/mchenry_events.rb'
+require_relative '../lib/mchenry_events'
 
-McHenryEvents::CLI.new.call
+MchenryEvents::CLI.new.call
