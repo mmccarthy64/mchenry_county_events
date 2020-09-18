@@ -23,7 +23,6 @@ class MchenryEvents::CLI
   def get_user_city
       chosen_city = get.strip.to_i
       show_events_for(chosen_city) if valid_input(chosen_city, @cities)
-    end
   end
   
   def valid_input(input, data)
