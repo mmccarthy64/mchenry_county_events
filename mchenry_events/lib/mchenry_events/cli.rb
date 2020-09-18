@@ -38,7 +38,6 @@ class MchenryEvents::CLI
     puts "Would you like to see more events?"
     puts "Enter (y/n) or 'exit'."
     input = gets.strip
-    while input == "y"
       list_cities
       get_user_city
     end
