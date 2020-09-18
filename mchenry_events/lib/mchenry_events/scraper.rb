@@ -15,19 +15,27 @@ class MchenryEvents::Scraper
     doc = Nokogiri::HTML(open("https://www.visitmchenrycounty.com/Annual-Events"))
     
     name_of_event = doc.css('div.listingWrap div.listingContent')
-
-    name_of_event.each.with_index(1) do |r, index|
-      name = r.css('h4').text
-      puts "#{index}. #{name}"
+    
+    city = city.name
+    
+    name_of_event.collect do |event, index|
+      if event.text.include?(city)
+        name = event.css('h4').text
+        puts "#{index}. #{name}"
+      end
     end
   end
   
-  def self.scrape_event_info(event)
-    doc = Nokogiri::HTML(open("https://www.visitmchenrycounty.com/Annual-Events"))
+  # def self.scrape_event_info(event)
+  #   doc = Nokogiri::HTML(open("https://www.visitmchenrycounty.com/Annual-Events"))
     
-    event_info = doc.css('div.listingContent br')
+  #   event_info = doc.css('div.listingWrap div.listingContent')
     
-    puts event_info
-  end
+  #   event_info.each do |r|
+  #     if r.text.include?(city)
+  #       puts r.text
+  #     end
+  #   end
+  # end
     
 end
