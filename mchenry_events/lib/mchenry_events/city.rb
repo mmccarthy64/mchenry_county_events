@@ -1,10 +1,11 @@
 class MchenryEvents::City
-  attr_accessor :name
+  attr_accessor :name, :events
   
   @@all = []
   
   def initialize(name)
     @name = name
+    @events = []
     save
   end
   
@@ -15,5 +16,11 @@ class MchenryEvents::City
   def self.all
     MchenryEvents::Scraper.scrape_cities if @@all.empty?
     @@all
+  end
+  
+  def get_events
+    # binding.pry
+    MchenryEvents::Scraper.scrape_events(self) if @events.empty?
+    @events
   end
 end
