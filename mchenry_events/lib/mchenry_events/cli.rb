@@ -65,12 +65,7 @@ class MchenryEvents::CLI
     event = @events[chosen_event]
     event.event_info
   end
-  
-  
-  
-  
-  
-  
+
 end
 
 
