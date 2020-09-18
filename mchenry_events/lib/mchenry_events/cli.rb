@@ -38,8 +38,13 @@ class MchenryEvents::CLI
     puts "Would you like to see more events?"
     puts "Enter (y/n) or 'exit'."
     input = gets.strip
+    if input == "y"
       list_cities
       get_user_city
+      event_again
+    elsif input == "exit" || input == "n"
+      puts "Goodbye!"
+    end
   end
   
   
