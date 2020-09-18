@@ -40,7 +40,6 @@ class MchenryEvents::CLI
     input = gets.strip
       list_cities
       get_user_city
-    end
   end
   
   
