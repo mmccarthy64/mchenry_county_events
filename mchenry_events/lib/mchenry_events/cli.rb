@@ -4,7 +4,8 @@ class MchenryEvents::CLI
     get_cities
     list_cities
     get_user_city
-    get_user_event
+    # get_user_event
+    event_again
   end
   
   def get_cities
@@ -15,14 +16,13 @@ class MchenryEvents::CLI
     @cities.each.with_index(0) do |city, index|
       puts "#{index}. #{city.name}"
     end
-    puts "Which city would you like to find events for?"
-    puts "Please enter the city number"
-    puts "or enter 'exit' to leave."
   end
   
   def get_user_city
-      chosen_city = get.strip.to_i
-      show_events_for(chosen_city) if valid_input(chosen_city, @cities)
+    puts "Which city would you like to find events for?"
+    puts "Please enter the city number."
+    chosen_city = gets.strip.to_i
+    show_events_for(chosen_city) if valid_input(chosen_city, @cities)
   end
   
   def valid_input(input, data)
@@ -34,21 +34,15 @@ class MchenryEvents::CLI
     city.get_events
   end
   
-  # def event_again
-  #   puts "Would you like to see more events?"
-  #   puts "Enter (y/n) or 'exit'."
-  #   input = gets.strip
-  #   if input  == "y"
-  #     get_cities
-  #     list_cities
-  #     get_user_city
-  #   elsif input == "n"
-  #     puts "Goodbye!"
-  #   elsif input != "y" || input != "n"
-  #     puts "That is not a valid input"
-  #     event_again
-  #   end
-  # end
+  def event_again
+    puts "Would you like to see more events?"
+    puts "Enter (y/n) or 'exit'."
+    input = gets.strip
+    while input == "y"
+      list_cities
+      get_user_city
+    end
+  end
   
   
   
