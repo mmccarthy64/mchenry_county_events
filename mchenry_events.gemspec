@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Finds events in  the McHenry area.}
   spec.description   = %q{}
-  spec.homepage      = "https://github.com/mmccarthy64/mchenry_events"
+  spec.homepage      = "https://github.com/mmccarthy64/mchenry_county_events"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -20,8 +20,8 @@ Gem::Specification.new do |spec|
     spec.metadata["allowed_push_host"] = 'http://mygemserver.com'
 
     spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "https://github.com/mmccarthy64/mchenry_events"
-    spec.metadata["changelog_uri"] = "https://github.com/mmccarthy64/mchenry_events"
+    spec.metadata["source_code_uri"] = "https://github.com/mmccarthy64/mchenry_county_events"
+    spec.metadata["changelog_uri"] = "https://github.com/mmccarthy64/mchenry_county_events"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
