@@ -3,7 +3,7 @@ class MchenryEvents::Scraper
   def self.scrape_cities
     doc = Nokogiri::HTML(open("https://www.visitmchenrycounty.com/Annual-Events"))
     
-    cities = doc.css('select#city option')
+    cities = doc.css('select#city option').reverse
     
     cities.each do |n|
       name = n.text
@@ -25,17 +25,5 @@ class MchenryEvents::Scraper
       end
     end
   end
-  
-  # def self.scrape_event_info(event)
-  #   doc = Nokogiri::HTML(open("https://www.visitmchenrycounty.com/Annual-Events"))
-    
-  #   event_info = doc.css('div.listingWrap div.listingContent')
-    
-  #   event_info.each do |r|
-  #     if r.text.include?(city)
-  #       puts r.text
-  #     end
-  #   end
-  # end
     
 end
