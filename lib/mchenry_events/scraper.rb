@@ -5,7 +5,7 @@ class MchenryEvents::Scraper
       
       cities = doc.css('select#city option').reverse
       
-      cities.each do |n|
+      cities.select do |n|
         name = n.text
         MchenryEvents::City.new(name)
       end
@@ -17,7 +17,6 @@ class MchenryEvents::Scraper
       name_of_event = doc.css('div.listingWrap div.listingContent')
       
       city = city.name
-      
       name_of_event.collect do |event, index|
         if event.text.include?(city)
           name = event.css('h4').text
