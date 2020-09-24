@@ -1,6 +1,6 @@
 # MchenryEvents
 
-This helps you to find out the local events in McHenry!
+This helps you to find out the local events in McHenry County!
 
 ## Installation
 
