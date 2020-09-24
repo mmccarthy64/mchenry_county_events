@@ -1,3 +1,4 @@
+
 class MchenryEvents::City
   attr_accessor :name, :events
   
@@ -19,7 +20,6 @@ class MchenryEvents::City
   end
   
   def get_events
-    # binding.pry
     MchenryEvents::Scraper.scrape_events(self) if @events.empty?
     @events
   end
