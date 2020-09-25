@@ -3,11 +3,13 @@ class MchenryEvents::Scraper
     def self.scrape_cities
       doc = Nokogiri::HTML(open("https://www.visitmchenrycounty.com/Annual-Events"))
       
-      cities = doc.css('select#city option').reverse
+      cities = doc.css('select#city option')
       
       cities.select do |n|
         name = n.text
-        MchenryEvents::City.new(name)
+        if name != "     "
+          MchenryEvents::City.new(name)
+        end
       end
     end
     
